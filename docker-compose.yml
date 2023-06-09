@@ -4,7 +4,8 @@ services:
     restart: on-failure
     build: .
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     environment:
       DATABASE_URL: postgres://user:pass@postgres:5432/db
     networks:
@@ -20,6 +21,8 @@ services:
       POSTGRES_DB: db
     networks:
       - yaebotnet
+    healthcheck:
+      test: "exit 0"
 networks:
   yaebotnet:
     driver: bridge
