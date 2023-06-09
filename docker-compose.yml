@@ -1,0 +1,25 @@
+services:
+  bot:
+    container_name: yae_bot
+    restart: on-failure
+    build: .
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgres://user:pass@postgres:5432/db
+    networks:
+      - yaebotnet
+  postgres:
+    container_name: yae_db
+    image: postgres:11
+    ports:
+      - "35432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: db
+    networks:
+      - yaebotnet
+networks:
+  yaebotnet:
+    driver: bridge

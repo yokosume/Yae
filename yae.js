@@ -6,6 +6,7 @@ const { Client, Events, GatewayIntentBits, Collection, IntentsBitField } = requi
 const mongoose = require ('mongoose');
 const { token } = require('./config.json');
 const { server } = require('./config.json');
+const pool = require('./config/db')
 
 const client = new Client({ 
     intents: [
@@ -18,16 +19,15 @@ const client = new Client({
 });
 client.commands = new Collection();
 
-async function connect (){
+async function connectDB() {
 	try {
-		await mongoose.connect(server, {keepAlive : true});
-		console.log('Yae est connectée au serveur');
-	} catch (error) {
-		console.log(error);
+		await pool.query("SELECT 1 + 1")
+	} catch (err) {
+		console.log(err);
 	}
 }
 
-connect();
+connectDB();
 
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
@@ -112,7 +112,6 @@ const ROLE = {
 	NAHIDA : '1037139336052871178',
 	ALHAITHAM : '1067867695992799403',
 	BAIZHU : '1088796898753785986',
-
 };
 
 client.on('interactionCreate', async (interaction) => {
