@@ -23,6 +23,11 @@ services:
       - yaebotnet
     healthcheck:
       test: "exit 0"
+    volumes:
+      - dbvol:/var/lib/postgresql/data
 networks:
   yaebotnet:
     driver: bridge
+volumes:
+  dbvol:
+

@@ -191,7 +191,7 @@ module.exports = {
         .setLabel('Baizhu')
         .setEmoji(`🔔`)
         .setStyle(ButtonStyle.Primary);
-/*
+
         yaetraining.send ({
             embeds : [Pyro],
             files : [elementP],
@@ -262,7 +262,7 @@ module.exports = {
                 }
             ]
         });						
-*/
+
 
     },
 };    
