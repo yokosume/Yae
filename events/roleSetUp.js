@@ -10,7 +10,7 @@ module.exports = {
 	once: true,
 	execute(client) {
 		
-        const roleChannel = client.channels.cache.get('1050362589655339008');
+        const roleChannel = client.channels.cache.get('1089847953079930920');
 		
 		const language = new EmbedBuilder()
 			.setTitle('Language')
