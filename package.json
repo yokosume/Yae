@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "yae.js",
-  "type": "module",
   "scripts": {
-    "start": "node ."
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",

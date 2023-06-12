@@ -1,10 +1,11 @@
-import * as pg from "pg";
-const { Client } = pg;
+const { Client } = require("pg");
 
-export const pool = new Client({
+const pool = new Client({
   host: "postgres",
   port: 5432,
   user: "user",
   password: "pass",
   database: "db",
 });
+
+module.exports = pool;

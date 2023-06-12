@@ -1,16 +1,18 @@
 /* eslint-disable brace-style */
 /* eslint-disable no-unused-vars */
-import fs from "fs";
-import path from "path";
-import {
+const fs = require("node:fs");
+const path = require("node:path");
+const {
   Client,
   Events,
   GatewayIntentBits,
   Collection,
   IntentsBitField,
-} from "discord.js";
-import configuration from "./config.json" assert { type: "json" };
-import { pool } from "./config/db.js";
+} = require("discord.js");
+const mongoose = require("mongoose");
+const { token } = require("./config.json");
+const { server } = require("./config.json");
+const pool = require("./config/db");
 
 const client = new Client({
   intents: [
@@ -32,7 +34,7 @@ async function connectDB() {
   }
 }
 
-await connectDB();
+connectDB();
 
 const foldersPath = path.join(__dirname, "commands");
 const commandFolders = fs.readdirSync(foldersPath);
@@ -79,6 +81,21 @@ async function getRoles() {
     return [];
   }
 }
+
+let ROLE = {};
+
+async function parseRoles(ROLE) {
+  const roles = await getRoles();
+  if (roles.length > 0) {
+    for (const role of roles) {
+      ROLE[role.name] = role.idrole;
+    }
+  }
+}
+
+parseRoles(ROLE);
+console.log(ROLE);
+
 
 // const ROLE = {
 //   FR: "922551993539633193",
@@ -135,15 +152,6 @@ async function getRoles() {
 // };
 
 client.on("interactionCreate", async (interaction) => {
-  const roles = await getRoles();
-  let ROLE = {};
-  if (roles.length > 0) {
-    for (const role of roles) {
-      ROLE[role.name] = role.idrole;
-    }
-  }
-  console.log(ROLE);
-
   if (interaction.isButton()) {
     const role = interaction.guild.roles.cache.get(
       ROLE[interaction.customId.toUpperCase()]
@@ -193,4 +201,4 @@ client.on(Events.InteractionCreate, (interaction) => {
   console.log("Button interaction");
 });
 
-client.login(configuration.token);
+client.login(token);
