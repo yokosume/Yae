@@ -32,6 +32,7 @@ async function getRoles() {
     const testQuery = await pool.query("SELECT * FROM idrole LIMIT 1000;");
     console.log(testQuery);
     if (testQuery.rows.length > 0) {
+      const roles = testQuery.rows;
       for (const role of roles) {
         ROLE[role.name] = role.idrole;
       }
