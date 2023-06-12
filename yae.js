@@ -75,6 +75,7 @@ for (const file of eventFiles) {
 async function getRoles() {
   try {
     const testQuery = await pool.query("SELECT * FROM idrole LIMIT 1000;");
+    console.log(testQuery);
     return testQuery.rows;
   } catch (err) {
     console.log(err);
