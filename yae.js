@@ -82,8 +82,6 @@ async function getRoles() {
   }
 }
 
-let ROLE = {};
-
 async function parseRoles(ROLE) {
   const roles = await getRoles();
   if (roles.length > 0) {
@@ -92,10 +90,6 @@ async function parseRoles(ROLE) {
     }
   }
 }
-
-parseRoles(ROLE);
-console.log(ROLE);
-
 
 // const ROLE = {
 //   FR: "922551993539633193",
@@ -152,6 +146,15 @@ console.log(ROLE);
 // };
 
 client.on("interactionCreate", async (interaction) => {
+  const roles = await getRoles();
+  const ROLE = {};
+
+  if (roles.length > 0) {
+    for (const role of roles) {
+      ROLE[role.name] = role.idrole;
+    }
+  }
+
   if (interaction.isButton()) {
     const role = interaction.guild.roles.cache.get(
       ROLE[interaction.customId.toUpperCase()]
