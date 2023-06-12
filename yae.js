@@ -160,6 +160,7 @@ client.on("interactionCreate", async (interaction) => {
     const role = interaction.guild.roles.cache.get(
       ROLE[interaction.customId.toUpperCase()]
     );
+    console.log(role);
 
     const Nmem = interaction.member;
     if (!role)
