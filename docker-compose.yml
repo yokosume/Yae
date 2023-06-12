@@ -3,28 +3,11 @@ services:
     container_name: yae_bot
     restart: on-failure
     build: .
-    depends_on:
-      postgres:
-        condition: service_healthy
     environment:
-      DATABASE_URL: postgres://user:pass@postgres:5432/db
+      SUPABASE_URL: https://ogwuljvjnlhmyvqodncw.supabase.co
+      SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9nd3VsanZqbmxobXl2cW9kbmN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODY1OTgxNzksImV4cCI6MjAwMjE3NDE3OX0.f8M7_D569K1ppofqzl5XObCkO4ARJRPSksryStcNO24"
     networks:
       - yaebotnet
-  postgres:
-    container_name: yae_db
-    image: postgres:11
-    ports:
-      - "35432:5432"
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: pass
-      POSTGRES_DB: db
-    networks:
-      - yaebotnet
-    healthcheck:
-      test: "exit 0"
-    volumes:
-      - dbvol:/var/lib/postgresql/data
 networks:
   yaebotnet:
     driver: bridge

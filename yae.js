@@ -1,5 +1,6 @@
 /* eslint-disable brace-style */
 /* eslint-disable no-unused-vars */
+require('dotenv').config();
 const fs = require("node:fs");
 const path = require("node:path");
 const {
@@ -12,7 +13,13 @@ const {
 const mongoose = require("mongoose");
 const { token } = require("./config.json");
 const { server } = require("./config.json");
-const pool = require("./config/db");
+
+const { createClient } = require('@supabase/supabase-js');
+
+const supabaseUrl = 'https://ogwuljvjnlhmyvqodncw.supabase.co/'
+const supabaseKey = process.env.SUPABASE_ANON_KEY
+const supabase = createClient(supabaseUrl, supabaseKey)
+
 
 let ROLE = {};
 
@@ -29,16 +36,15 @@ client.commands = new Collection();
 
 async function getRoles() {
   try {
-    const testQuery = await pool.query("SELECT * FROM idrole LIMIT 1000;");
-    console.log(testQuery);
-    if (testQuery.rows.length > 0) {
-      const roles = testQuery.rows;
+    const { data, error } = await supabase.from('idrole').select("*");
+    if (data.length > 0) {
+      const roles = data;
       for (const role of roles) {
-        ROLE[role.name] = role.idrole;
+        ROLE[role.name] = (role.roleId.toString());
       }
       console.log(ROLE);
     }
-    return testQuery.rows;
+    return data;
   } catch (err) {
     console.log(err);
     return [];
@@ -48,7 +54,6 @@ async function getRoles() {
 async function connectDB() {
   console.log("Connecting to Postgres...");
   try {
-    await pool.connect();
     await getRoles();
   } catch (err) {
     console.log(err);
@@ -161,7 +166,6 @@ client.on("interactionCreate", async (interaction) => {
     const role = interaction.guild.roles.cache.get(
       ROLE[interaction.customId.toUpperCase()]
     );
-    console.log(role);
 
     const Nmem = interaction.member;
     if (!role)
