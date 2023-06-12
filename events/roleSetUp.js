@@ -11,7 +11,7 @@ module.exports = {
 	execute(client) {
 		
         const roleChannel = client.channels.cache.get('1050362589655339008');
-		/*
+		
 		const language = new EmbedBuilder()
 			.setTitle('Language')
 			.setDescription(`Choose the languages ​​you want to get access to every channel\n`)
@@ -184,6 +184,6 @@ module.exports = {
 				}
 			]
 		});
-		*/	
+			
 	},
 };
