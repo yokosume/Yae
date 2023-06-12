@@ -10,7 +10,7 @@ import {
   IntentsBitField,
 } from "discord.js";
 import configuration from "./config.json" assert { type: "json" };
-import pool from "./config/db.js";
+import { pool } from "./config/db.js";
 
 const client = new Client({
   intents: [
