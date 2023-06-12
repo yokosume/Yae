@@ -13,8 +13,7 @@ module.exports = {
 	name: Events.ClientReady,
 	once: true,
 	execute(client) {
-        const fiveStarChannel = client.channels.cache.get('844638423951605790');
-        const yaetraining = client.channels.cache.get('1089847953079930920');
+        const yaetraining = client.channels.cache.get('844638423951605790');
 
 
         const Pyro = new EmbedBuilder()
@@ -192,76 +191,77 @@ module.exports = {
         .setEmoji(`🐍`)
         .setStyle(ButtonStyle.Primary);
 
-        yaetraining.send ({
-            embeds : [Pyro],
-            files : [elementP],
-            components : [
-                {
-                    type : 1,
-                    components : [pyroC[0], pyroC[1], pyroC[2]],
-                }
-            ]
-        });
-        yaetraining.send ({
-            embeds : [Hydro],
-            files : [elementH],
-            components : [
-                {
-                    type : 1,
-                    components : [hydroC[0], hydroC[1], hydroC[2], hydroC[3], hydroC[4]],
-                }
-            ]
-        });
-        yaetraining.send ({
-            embeds : [Electro],
-            files : [elementE],
-            components : [
-                {
-                    type : 1,
-                    components : [electroC[0], electroC[1], electroC[2]],
-                }
-            ]
-        });
-        yaetraining.send ({
-            embeds : [Cryo],
-            files : [elementC],
-            components : [
-                {
-                    type : 1,
-                    components : [cryoC[0], cryoC[1], cryoC[2], cryoC[3]],
-                }
-            ]
-        });
-        yaetraining.send ({
-            embeds : [Anemo],
-            files : [elementA],
-            components : [
-                {
-                    type : 1,
-                    components : [anemoC[0], anemoC[1], anemoC[2], anemoC[3]],
-                }
-            ]
-        });
-        yaetraining.send ({
-            embeds : [Geo],
-            files : [elementG],
-            components : [
-                {
-                    type : 1,
-                    components : [geoC[0], geoC[1], geoC[2]],
-                }
-            ]
-        });
-        yaetraining.send ({
-            embeds : [Dendro],
-            files : [elementD],
-            components : [
-                {
-                    type : 1,
-                    components : [dendroC[0], dendroC[1], dendroC[2]],
-                }
-            ]
-        });						
+        // yaetraining.send ({
+        //     embeds : [Pyro],
+        //     files : [elementP],
+        //     components : [
+        //         {
+        //             type : 1,
+        //             components : [pyroC[0], pyroC[1], pyroC[2]],
+        //         }
+        //     ]
+        // });
+        
+        // yaetraining.send ({
+        //     embeds : [Hydro],
+        //     files : [elementH],
+        //     components : [
+        //         {
+        //             type : 1,
+        //             components : [hydroC[0], hydroC[1], hydroC[2], hydroC[3], hydroC[4]],
+        //         }
+        //     ]
+        // });
+        // yaetraining.send ({
+        //     embeds : [Electro],
+        //     files : [elementE],
+        //     components : [
+        //         {
+        //             type : 1,
+        //             components : [electroC[0], electroC[1], electroC[2]],
+        //         }
+        //     ]
+        // });
+        // yaetraining.send ({
+        //     embeds : [Cryo],
+        //     files : [elementC],
+        //     components : [
+        //         {
+        //             type : 1,
+        //             components : [cryoC[0], cryoC[1], cryoC[2], cryoC[3]],
+        //         }
+        //     ]
+        // });
+        // yaetraining.send ({
+        //     embeds : [Anemo],
+        //     files : [elementA],
+        //     components : [
+        //         {
+        //             type : 1,
+        //             components : [anemoC[0], anemoC[1], anemoC[2], anemoC[3]],
+        //         }
+        //     ]
+        // });
+        // yaetraining.send ({
+        //     embeds : [Geo],
+        //     files : [elementG],
+        //     components : [
+        //         {
+        //             type : 1,
+        //             components : [geoC[0], geoC[1], geoC[2]],
+        //         }
+        //     ]
+        // });
+        // yaetraining.send ({
+        //     embeds : [Dendro],
+        //     files : [elementD],
+        //     components : [
+        //         {
+        //             type : 1,
+        //             components : [dendroC[0], dendroC[1], dendroC[2]],
+        //         }
+        //     ]
+        // });						
 
 
     },
