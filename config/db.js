@@ -1,4 +1,4 @@
-const { Client } = require("pg");
+import { Client } from "pg";
 
 export const pool = new Client({
   host: "postgres",
