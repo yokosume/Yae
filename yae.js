@@ -146,14 +146,16 @@ async function parseRoles(ROLE) {
 // };
 
 client.on("interactionCreate", async (interaction) => {
-  const roles = await getRoles();
   const ROLE = {};
-
-  if (roles.length > 0) {
-    for (const role of roles) {
-      ROLE[role.name] = role.idrole;
+  getRoles().then((roles) => {
+    if (roles.length > 0) {
+      for (const role of roles) {
+        ROLE[role.name] = role.idrole;
+      }
+      console.log(ROLE);
     }
-  }
+  });
+  console.log(ROLE);
 
   if (interaction.isButton()) {
     const role = interaction.guild.roles.cache.get(
