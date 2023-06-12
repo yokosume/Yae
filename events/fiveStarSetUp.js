@@ -79,7 +79,7 @@ module.exports = {
         cryoC[1] = new ButtonBuilder()
         .setCustomId('EULA')
         .setLabel('Eula')
-        .setEmoji(`🔔`)
+        .setEmoji(`⚜️`)
         .setStyle(ButtonStyle.Primary);
         cryoC[2] = new ButtonBuilder()
         .setCustomId('AYAKA')
@@ -96,100 +96,100 @@ module.exports = {
         anemoC[0] = new ButtonBuilder()
         .setCustomId('VENTI')
         .setLabel('Venti')
-        .setEmoji(`🔔`)
+        .setEmoji(`🎶 `)
         .setStyle(ButtonStyle.Primary);
         anemoC[1] = new ButtonBuilder()
         .setCustomId('XIAO')
         .setLabel('Xiao')
-        .setEmoji(`🔔`)
+        .setEmoji(`👹 `)
         .setStyle(ButtonStyle.Primary);
         anemoC[2] = new ButtonBuilder()
         .setCustomId('KAZUHA')
         .setLabel('Kazuha')
-        .setEmoji(`🔔`)
+        .setEmoji(`🍁 `)
         .setStyle(ButtonStyle.Primary);
         anemoC[3] = new ButtonBuilder()
         .setCustomId('WANDERER')
         .setLabel('Wanderer')
-        .setEmoji(`🔔`)
+        .setEmoji(`🍃 `)
         .setStyle(ButtonStyle.Primary);
 
         let geoC = [];
         geoC[0] = new ButtonBuilder()
         .setCustomId('ZHONGLI')
         .setLabel('Zhongli')
-        .setEmoji(`🔔`)
+        .setEmoji(`☄️ `)
         .setStyle(ButtonStyle.Primary);
         geoC[1] = new ButtonBuilder()
         .setCustomId('ALBEDO')
         .setLabel('Albedo')
-        .setEmoji(`🔔`)
+        .setEmoji(`🏵️ `)
         .setStyle(ButtonStyle.Primary);
         geoC[2] = new ButtonBuilder()
         .setCustomId('ITTO')
         .setLabel('Itto')
-        .setEmoji(`🔔`)
+        .setEmoji(`😈`)
         .setStyle(ButtonStyle.Primary);
 
         let hydroC = [];
         hydroC[0] = new ButtonBuilder()
         .setCustomId('TARTAGLIA')
         .setLabel('Tartaglia')
-        .setEmoji(`🔔`)
+        .setEmoji(`⚔️ `)
         .setStyle(ButtonStyle.Primary);
         hydroC[1] = new ButtonBuilder()
         .setCustomId('KOKOMI')
         .setLabel('Kokomi')
-        .setEmoji(`🔔`)
+        .setEmoji(`🐟  `)
         .setStyle(ButtonStyle.Primary);
         hydroC[2] = new ButtonBuilder()
         .setCustomId('AYATO')
         .setLabel('Ayato')
-        .setEmoji(`🔔`)
+        .setEmoji(`🗡️ `)
         .setStyle(ButtonStyle.Primary);
         hydroC[3] = new ButtonBuilder()
         .setCustomId('YELAN')
         .setLabel('Yelan')
-        .setEmoji(`🔔`)
+        .setEmoji(`🎲 `)
         .setStyle(ButtonStyle.Primary);
         hydroC[4] = new ButtonBuilder()
         .setCustomId('NILOU')
         .setLabel('Nilou')
-        .setEmoji(`🔔`)
+        .setEmoji(`💃 `)
         .setStyle(ButtonStyle.Primary);
 
         let electroC = [];
         electroC[0] = new ButtonBuilder()
         .setCustomId('RAIDEN')
         .setLabel('Raiden Shogun')
-        .setEmoji(`🔔`)
+        .setEmoji(`🌩️`)
         .setStyle(ButtonStyle.Primary);
         electroC[1] = new ButtonBuilder()
         .setCustomId('YAE')
         .setLabel('Yae Miko')
-        .setEmoji(`🔔`)
+        .setEmoji(`🦊 `)
         .setStyle(ButtonStyle.Primary);
         electroC[2] = new ButtonBuilder()
         .setCustomId('CYNO')
         .setLabel('Cyno')
-        .setEmoji(`🔔`)
+        .setEmoji(`🐾 `)
         .setStyle(ButtonStyle.Primary);
 
         let dendroC = [];
         dendroC[0] = new ButtonBuilder()
         .setCustomId('NAHIDA')
         .setLabel('Nadiha')
-        .setEmoji(`🔔`)
+        .setEmoji(`🪴 `)
         .setStyle(ButtonStyle.Primary);
         dendroC[1] = new ButtonBuilder()
         .setCustomId('ALHAITHAM')
         .setLabel('Al Haitham')
-        .setEmoji(`🔔`)
+        .setEmoji(`🌿`)
         .setStyle(ButtonStyle.Primary);
         dendroC[2] = new ButtonBuilder()
         .setCustomId('BAIZHU')
         .setLabel('Baizhu')
-        .setEmoji(`🔔`)
+        .setEmoji(`🐍`)
         .setStyle(ButtonStyle.Primary);
 
         yaetraining.send ({
