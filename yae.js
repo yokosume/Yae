@@ -14,6 +14,8 @@ const { token } = require("./config.json");
 const { server } = require("./config.json");
 const pool = require("./config/db");
 
+let ROLE = {};
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -25,10 +27,28 @@ const client = new Client({
 });
 client.commands = new Collection();
 
+async function getRoles() {
+  try {
+    const testQuery = await pool.query("SELECT * FROM idrole LIMIT 1000;");
+    console.log(testQuery);
+    if (testQuery.rows.length > 0) {
+      for (const role of roles) {
+        ROLE[role.name] = role.idrole;
+      }
+      console.log(ROLE);
+    }
+    return testQuery.rows;
+  } catch (err) {
+    console.log(err);
+    return [];
+  }
+}
+
 async function connectDB() {
   console.log("Connecting to Postgres...");
   try {
     await pool.connect();
+    await getRoles();
   } catch (err) {
     console.log(err);
   }
@@ -69,17 +89,6 @@ for (const file of eventFiles) {
     client.once(event.name, (...args) => event.execute(...args));
   } else {
     client.on(event.name, (...args) => event.execute(...args));
-  }
-}
-
-async function getRoles() {
-  try {
-    const testQuery = await pool.query("SELECT * FROM idrole LIMIT 1000;");
-    console.log(testQuery);
-    return testQuery.rows;
-  } catch (err) {
-    console.log(err);
-    return [];
   }
 }
 
@@ -147,21 +156,11 @@ async function parseRoles(ROLE) {
 // };
 
 client.on("interactionCreate", async (interaction) => {
-  const ROLE = {};
-  getRoles().then((roles) => {
-    if (roles.length > 0) {
-      for (const role of roles) {
-        ROLE[role.name] = role.idrole;
-      }
-      console.log(ROLE);
-    }
-  });
-  console.log(ROLE);
-
   if (interaction.isButton()) {
     const role = interaction.guild.roles.cache.get(
       ROLE[interaction.customId.toUpperCase()]
     );
+    console.log(role);
 
     const Nmem = interaction.member;
     if (!role)
