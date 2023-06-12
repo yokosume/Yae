@@ -1,4 +1,5 @@
-import { Client } from "pg";
+import * as pg from "pg";
+const { Client } = pg;
 
 export const pool = new Client({
   host: "postgres",
