@@ -10,8 +10,8 @@ module.exports = {
 	once: true,
 	execute(client) {
 		
-        const roleChannel = client.channels.cache.get('1089847953079930920');
-		
+        const roleChannel = client.channels.cache.get('1050362589655339008');
+	/*	
 		const language = new EmbedBuilder()
 			.setTitle('Language')
 			.setDescription(`Choose the languages ​​you want to get access to every channel\n`)
@@ -34,8 +34,8 @@ module.exports = {
 			embeds : [language],
 			files : [languageI],
         });
-        
-
+     */   
+/*
 		const pronouns = new EmbedBuilder()
 			.setTitle('Choose your prefered pronouns')
 			.setImage('attachment://YaePronouns.png')
@@ -61,7 +61,7 @@ module.exports = {
 			embeds : [pronouns],
 			files : [pronounsI]
         });
-		
+	*/
 
 		const pings = new EmbedBuilder()
 			.setTitle('Pings :')
@@ -110,7 +110,7 @@ module.exports = {
 			.setLabel('Coop Asia')
 			.setStyle(ButtonStyle.Primary)
 			.setEmoji(`🇨🇳`);
-		
+		/*
 		roleChannel.send ({
 			embeds : [pings],
 			files : [pingsI],
@@ -125,7 +125,7 @@ module.exports = {
 				}
 			]
 		});		
-
+*/
 		const element = new EmbedBuilder()
 			.setTitle('Choose Your Element')
 			.setDescription(`U will be in the color of your element, choose your team wisely\n`)
@@ -169,7 +169,7 @@ module.exports = {
 			.setStyle(ButtonStyle.Primary)
 			.setEmoji(`🌱`);
 			
-		
+	/*	
 		roleChannel.send ({
 			embeds : [element],
 			files : [elementI],
@@ -184,6 +184,6 @@ module.exports = {
 				}
 			]
 		});
-			
+		*/
 	},
 };
