@@ -51,6 +51,11 @@ module.exports = {
             .setImage('attachment://GeoLogo.png')
 			.setColor(0xF2B100);
 
+        const Standard = new EmbedBuilder()
+			.setTitle('Standard Banner')
+            .setImage('attachment://StandardWish.jpg')
+			.setColor(0xFF0000);    
+
         let pyroC = [];
         pyroC[0] = new ButtonBuilder()
         .setCustomId('KLEE')
@@ -191,6 +196,43 @@ module.exports = {
         .setEmoji(`🐍`)
         .setStyle(ButtonStyle.Primary);
 
+        let StandardC = [];
+        StandardC[0] = new ButtonBuilder()
+        .setCustomId('DILUC')
+        .setLabel('Diluc')
+        .setEmoji(`🍷`)
+        .setStyle(ButtonStyle.Primary);
+        StandardC[1] = new ButtonBuilder()
+        .setCustomId('JEAN')
+        .setLabel('Jean')
+        .setEmoji(`🌪️`)
+        .setStyle(ButtonStyle.Primary);
+        StandardC[2] = new ButtonBuilder()
+        .setCustomId('MONA')
+        .setLabel('Mona')
+        .setEmoji(`🔮`)
+        .setStyle(ButtonStyle.Primary);
+        StandardC[3] = new ButtonBuilder()
+        .setCustomId('QIQI')
+        .setLabel('Qiqi')
+        .setEmoji(`👻`)
+        .setStyle(ButtonStyle.Primary);
+        StandardC[4] = new ButtonBuilder()
+        .setCustomId('KEQING')
+        .setLabel('Keqing')
+        .setEmoji(`⚡`)
+        .setStyle(ButtonStyle.Primary);
+        StandardC[5] = new ButtonBuilder()
+        .setCustomId('TIGHNARI')
+        .setLabel('Tighnari')
+        .setEmoji(`🎋`)
+        .setStyle(ButtonStyle.Primary);
+        StandardC[6] = new ButtonBuilder()
+        .setCustomId('DEHYA')
+        .setLabel('Dehya')
+        .setEmoji(`👊`)
+        .setStyle(ButtonStyle.Primary);
+
         // yaetraining.send ({
         //     embeds : [Pyro],
         //     files : [elementP],
@@ -261,8 +303,22 @@ module.exports = {
         //             components : [dendroC[0], dendroC[1], dendroC[2]],
         //         }
         //     ]
-        // });						
-
+        // });
+        
+        yaetraining.send ({
+            embeds : [Standard],
+            files : [elementS],
+            components : [
+                {
+                    type : 1,
+                    components : [StandardC[0], StandardC[1], StandardC[2], StandardC[3], StandardC[4]],
+                },
+                {
+                    type : 1,
+                    components : [StandardC[5], StandardC[6]],
+                }
+            ]
+        });
 
     },
 };    
