@@ -72,6 +72,11 @@ module.exports = {
         .setLabel('Yoimiya')
         .setEmoji(`🎇`)
         .setStyle(ButtonStyle.Primary);
+        pyroC[3] = new ButtonBuilder()
+        .setCustomId('LYNEY')
+        .setLabel('Lyney')
+        .setEmoji(`🎩`)
+        .setStyle(ButtonStyle.Primary);
 
         
         let cryoC = [];
@@ -161,6 +166,11 @@ module.exports = {
         .setLabel('Nilou')
         .setEmoji(`💃`)
         .setStyle(ButtonStyle.Primary);
+        hydroC[4] = new ButtonBuilder()
+        .setCustomId('NEUVILLETTE')
+        .setLabel('Neuvillette')
+        .setEmoji(`⚖️`)
+        .setStyle(ButtonStyle.Primary);
 
         let electroC = [];
         electroC[0] = new ButtonBuilder()
@@ -232,6 +242,11 @@ module.exports = {
         .setLabel('Dehya')
         .setEmoji(`👊`)
         .setStyle(ButtonStyle.Primary);
+        StandardC[7] = new ButtonBuilder()
+        .setCustomId('WRIOTHESLEY')
+        .setLabel('Wriothesley')
+        .setEmoji(`⛓️`)
+        .setStyle(ButtonStyle.Primary);
 
         // yaetraining.send ({
         //     embeds : [Pyro],
@@ -239,7 +254,7 @@ module.exports = {
         //     components : [
         //         {
         //             type : 1,
-        //             components : [pyroC[0], pyroC[1], pyroC[2]],
+        //             components : [pyroC[0], pyroC[1], pyroC[2], pyroC[3]],
         //         }
         //     ]
         // });
@@ -251,9 +266,14 @@ module.exports = {
         //         {
         //             type : 1,
         //             components : [hydroC[0], hydroC[1], hydroC[2], hydroC[3], hydroC[4]],
+        //         },
+        //         {
+        //             type : 1,
+        //             components : [hydroC[5]],
         //         }
         //     ]
         // });
+
         // yaetraining.send ({
         //     embeds : [Electro],
         //     files : [elementE],
@@ -305,20 +325,20 @@ module.exports = {
         //     ]
         // });
         
-        yaetraining.send ({
-            embeds : [Standard],
-            files : [elementS],
-            components : [
-                {
-                    type : 1,
-                    components : [StandardC[0], StandardC[1], StandardC[2], StandardC[3], StandardC[4]],
-                },
-                {
-                    type : 1,
-                    components : [StandardC[5], StandardC[6]],
-                }
-            ]
-        });
+        // yaetraining.send ({
+        //     embeds : [Standard],
+        //     files : [elementS],
+        //     components : [
+        //         {
+        //             type : 1,
+        //             components : [StandardC[0], StandardC[1], StandardC[2], StandardC[3], StandardC[4]],
+        //         },
+        //         {
+        //             type : 1,
+        //             components : [StandardC[5], StandardC[6], StandardC[7]],
+        //         }
+        //     ]
+        // });
 
     },
 };    
