@@ -184,29 +184,29 @@ module.exports = {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-		// const verify = new EmbedBuilder()
-		// .setTitle('Verification')
-		// .setDescription(`Voila tu as bien choisis tes roles tu n'as plus qu'a : \n
-		//  Cliquer sur le bouton pour recevoir le role membre et voir tous les channels\n`)
-		// .setColor(0xC70EC7);
+		const verify = new EmbedBuilder()
+		.setTitle('Verification')
+		.setDescription(`Voila tu as bien choisis tes roles tu n'as plus qu'a : \n
+		 Cliquer sur le bouton pour recevoir le role membre et voir tous les channels\n`)
+		.setColor(0xC70EC7);
 
 		
-		// let verifyB = [];
-		// 	verifyB[0] = new ButtonBuilder()
-		// 	.setCustomId('MEMBER')
-		// 	.setLabel('Membre')
-		// 	.setStyle(ButtonStyle.Primary)
-		// 	.setEmoji(`✅`);
+		let verifyB = [];
+			verifyB[0] = new ButtonBuilder()
+			.setCustomId('TEST')
+			.setLabel('test')
+			.setStyle(ButtonStyle.Primary)
+			.setEmoji(`✅`);
 
-		// roleChanneltest.send ({
-		// 	embeds : [verify],
-		// 	components : [
-		// 		{
-		// 			type : 1,
-		// 			components : [verifyB[0]],
-		// 		}
-		// 	]
-		// });
+		roleChanneltest.send ({
+			embeds : [verify],
+			components : [
+				{
+					type : 1,
+					components : [verifyB[0]],
+				}
+			]
+		});
 		
 	},
 };
