@@ -116,6 +116,8 @@ async function parseRoles(ROLE) {
 }
 
 client.on("interactionCreate", async (interaction) => {
+  await getRoles();
+  
   if (interaction.isButton()) {
     const role = interaction.guild.roles.cache.get(
       ROLE[interaction.customId.toUpperCase()]
