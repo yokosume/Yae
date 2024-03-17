@@ -77,6 +77,11 @@ module.exports = {
         .setLabel('Lyney')
         .setEmoji(`🎩`)
         .setStyle(ButtonStyle.Primary);
+        pyroC[4] = new ButtonBuilder()
+        .setCustomId('ARLECCHINO')
+        .setLabel('Arlecchino')
+        .setEmoji(`🩸`)
+        .setStyle(ButtonStyle.Primary);
 
         
         let cryoC = [];
@@ -153,6 +158,11 @@ module.exports = {
         .setCustomId('NAVIA')
         .setLabel('Navia')
         .setEmoji(`☂️`)
+        .setStyle(ButtonStyle.Primary);
+        geoC[4] = new ButtonBuilder()
+        .setCustomId('CHIORI')
+        .setLabel('Chiori')
+        .setEmoji(`🪡`)
         .setStyle(ButtonStyle.Primary);
 
         let hydroC = [];
@@ -270,7 +280,7 @@ module.exports = {
         //     components : [
         //         {
         //             type : 1,
-        //             components : [pyroC[0], pyroC[1], pyroC[2], pyroC[3]],
+        //             components : [pyroC[0], pyroC[1], pyroC[2], pyroC[3], pyroC[4]],
         //         }
         //     ]
         // });
@@ -326,7 +336,7 @@ module.exports = {
         //     components : [
         //         {
         //             type : 1,
-        //             components : [geoC[0], geoC[1], geoC[2], geoC[3]],
+        //             components : [geoC[0], geoC[1], geoC[2], geoC[3], geoC[4]],
         //         }
         //     ]
         // });
@@ -341,20 +351,20 @@ module.exports = {
         //     ]
         // });
         
-        // yaetraining.send ({
-        //     embeds : [Standard],
-        //     files : [elementS],
-        //     components : [
-        //         {
-        //             type : 1,
-        //             components : [StandardC[0], StandardC[1], StandardC[2], StandardC[3], StandardC[4]],
-        //         },
-        //         {
-        //             type : 1,
-        //             components : [StandardC[5], StandardC[6]],
-        //         }
-        //     ]
-        // });
+        yaetraining.send ({
+            embeds : [Standard],
+            files : [elementS],
+            components : [
+                {
+                    type : 1,
+                    components : [StandardC[0], StandardC[1], StandardC[2], StandardC[3], StandardC[4]],
+                },
+                {
+                    type : 1,
+                    components : [StandardC[5], StandardC[6]],
+                }
+            ]
+        });
 
     },
 };    
