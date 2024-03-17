@@ -1,0 +1,32 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: ['master']
+  pull_request:
+    branches: ['master']
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Change directory to target-server
+        run: cd /home/neekeau/Yae/
+
+      # Step 2: Stop the running containers using docker-compose down
+      - name: Stop running containers
+        run: docker-compose down
+
+      # Step 3: Delete the current docker image
+      - name: Delete current docker image
+        run: docker rmi yae-bot || true
+
+      # Step 4: Build the Docker image
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag yae-bot:$(date +%s)
+
+      # Step 5: Start the containers using docker-compose up
+      - name: Start containers
+        run: docker-compose up -d
