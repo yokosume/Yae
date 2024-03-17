@@ -4,6 +4,7 @@ const languageI = new AttachmentBuilder('./picture/YaeLanguage.png');
 const pronounsI = new AttachmentBuilder('./picture/YaePronouns.png');
 const pingsI = new AttachmentBuilder('./picture/YaePing.png');
 const elementI = new AttachmentBuilder('./picture/YaeElement.png');
+const verifyI = new AttachmentBuilder('./picture/evapdpserv.png');
 
 module.exports = {
 	name: Events.ClientReady,
@@ -11,65 +12,60 @@ module.exports = {
 	execute(client) {
 		
         const roleChannel = client.channels.cache.get('1050362589655339008');
-	/*	
+		const roleChanneltest = client.channels.cache.get('1089847953079930920');
+
 		const language = new EmbedBuilder()
-			.setTitle('Language')
-			.setDescription(`Choose the languages ​​you want to get access to every channel\n`)
+			.setTitle('Langue')
 			.setImage('attachment://YaeLanguage.png')
 			.setColor(0xC70EC7);
         // console.log(roleChannel);
-        roleChannel.send({
-			components : [new ActionRowBuilder().setComponents(
-			new ButtonBuilder()
-                .setCustomId('FR')
-                .setLabel('Français')
-                .setStyle(ButtonStyle.Primary)
-				.setEmoji(`🇨🇵`),
-			new ButtonBuilder()
-                .setCustomId('EN')
-                .setLabel('English')
-                .setStyle(ButtonStyle.Primary)
-				.setEmoji(`🇬🇧`),
-			)],
-			embeds : [language],
-			files : [languageI],
-        });
-     */   
-/*
+        // roleChannel.send({
+		// 	components : [new ActionRowBuilder().setComponents(
+		// 	new ButtonBuilder()
+        //         .setCustomId('FR')
+        //         .setLabel('Français')
+        //         .setStyle(ButtonStyle.Primary)
+		// 		.setEmoji(`🇨🇵`),
+		// 	new ButtonBuilder()
+        //         .setCustomId('EN')
+        //         .setLabel('English')
+        //         .setStyle(ButtonStyle.Primary)
+		// 		.setEmoji(`🇬🇧`),
+		// 	)],
+		// 	embeds : [language],
+		// 	files : [languageI],
+        // });
+     
+
 		const pronouns = new EmbedBuilder()
-			.setTitle('Choose your prefered pronouns')
+			.setTitle('Choisis ton pronom préféré')
 			.setImage('attachment://YaePronouns.png')
 			.setColor(0xC70EC7);
-        roleChannel.send({
-			components : [new ActionRowBuilder().setComponents(
-			new ButtonBuilder()
-                .setCustomId('HE')
-                .setLabel('He / him')
-                .setStyle(ButtonStyle.Primary)
-				.setEmoji(`💚`),
-			new ButtonBuilder()
-                .setCustomId('SHE')
-                .setLabel('She / her')
-                .setStyle(ButtonStyle.Primary)
-				.setEmoji(`💜`),
-			new ButtonBuilder()
-                .setCustomId('THEY')
-                .setLabel('They / them')
-                .setStyle(ButtonStyle.Primary)
-				.setEmoji(`🧡`),
-			)],
-			embeds : [pronouns],
-			files : [pronounsI]
-        });
-	*/
+        // roleChannel.send({
+		// 	components : [new ActionRowBuilder().setComponents(
+		// 	new ButtonBuilder()
+        //         .setCustomId('HE')
+        //         .setLabel('Il')
+        //         .setStyle(ButtonStyle.Primary)
+		// 		.setEmoji(`💚`),
+		// 	new ButtonBuilder()
+        //         .setCustomId('SHE')
+        //         .setLabel('Elle')
+        //         .setStyle(ButtonStyle.Primary)
+		// 		.setEmoji(`💜`),
+		// 	)],
+		// 	embeds : [pronouns],
+		// 	files : [pronounsI]
+        // });
+	
 
 		const pings = new EmbedBuilder()
 			.setTitle('Pings :')
-			.setDescription(`Annoucements : Every informations about Update livestream / Codes / Server Update / WebEvent
-			\nLeaks / Spoils : If u want to discover what is going to happen in the next Genshin patch
-			\nCoop EU / US / ASIA : Need help ? or just play with friend then lets coop
-			\nTCG : To play and show your extreme strategie on the genshin Card Game 
-			\nTwitch Notification : Si vous ne voulez pas manquer un seul stream de Eva (Les streams sont en Français)
+			.setDescription(`Annonces : Toutes les informations liées aux livestream d'update genshin / Codes / M.a.J  / WebEvent.
+			\nLeaks / Spoils : si tu veux savoir ce qu'il va se passer dans les prochains patch de Genshin et Honkai Star Rail.
+			\nCoop EU / US / ASIA : Besoin d'aide ? ou juste envie de jouer avec des amis ? venez co-op!
+			\nTGC : Pour jouer et montrer vos meilleurs stratagèmes sur le  jeu de carte Genshin 
+			\nTwitch Notification : Si vous ne voulez pas manquer un seul stream de Eva
 			 \n`)
 			.setImage('attachment://YaePing.png')
 			.setColor(0xC70EC7);
@@ -77,7 +73,7 @@ module.exports = {
 		let pingB = [];
 		pingB[0] = new ButtonBuilder()
 			.setCustomId('ANNOUNCEMENT')
-			.setLabel('Announcement')
+			.setLabel('Annonce')
 			.setStyle(ButtonStyle.Primary)
 			.setEmoji(`🔔`);
 		pingB[1] = new ButtonBuilder()
@@ -110,25 +106,25 @@ module.exports = {
 			.setLabel('Coop Asia')
 			.setStyle(ButtonStyle.Primary)
 			.setEmoji(`🇨🇳`);
-		/*
-		roleChannel.send ({
-			embeds : [pings],
-			files : [pingsI],
-			components : [
-				{
-					type : 1,
-					components : [pingB[0], pingB[1], pingB[2], pingB[3]],
-				},
-				{
-					type : 1,
-					components : [pingB[4], pingB[5], pingB[6]],
-				}
-			]
-		});		
-*/
+		
+		// roleChannel.send ({
+		// 	embeds : [pings],
+		// 	files : [pingsI],
+		// 	components : [
+		// 		{
+		// 			type : 1,
+		// 			components : [pingB[0], pingB[1], pingB[2], pingB[3]],
+		// 		},
+		// 		{
+		// 			type : 1,
+		// 			components : [pingB[4], pingB[5], pingB[6]],
+		// 		}
+		// 	]
+		// });		
+
 		const element = new EmbedBuilder()
-			.setTitle('Choose Your Element')
-			.setDescription(`U will be in the color of your element, choose your team wisely\n`)
+			.setTitle('Choisis ton élément')
+			.setDescription(`Tu seras de la couleur de ton élément choisis bien !\n`)
 			.setImage('attachment://YaeElement.png')
 			.setColor(0xC70EC7)
 
@@ -169,21 +165,48 @@ module.exports = {
 			.setStyle(ButtonStyle.Primary)
 			.setEmoji(`🌱`);
 			
-	/*	
-		roleChannel.send ({
-			embeds : [element],
-			files : [elementI],
-			components : [
-				{
-					type : 1,
-					components : [elementsB[0], elementsB[1], elementsB[2], elementsB[3], elementsB[4]],
-				},
-				{
-					type : 1,
-					components : [elementsB[5], elementsB[6]],
-				}
-			]
-		});
-		*/
+		
+		//roleChannel.send ({
+		// 	embeds : [element],
+		// 	files : [elementI],
+		// 	components : [
+		// 		{
+		// 			type : 1,
+		// 			components : [elementsB[0], elementsB[1], elementsB[2], elementsB[3], elementsB[4]],
+		// 		},
+		// 		{
+		// 			type : 1,
+		// 			components : [elementsB[5], elementsB[6]],
+		// 		}
+		// 	]
+		// });
+		
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+		// const verify = new EmbedBuilder()
+		// .setTitle('Verification')
+		// .setDescription(`Voila tu as bien choisis tes roles tu n'as plus qu'a : \n
+		//  Cliquer sur le bouton pour recevoir le role membre et voir tous les channels\n`)
+		// .setColor(0xC70EC7);
+
+		
+		// let verifyB = [];
+		// 	verifyB[0] = new ButtonBuilder()
+		// 	.setCustomId('MEMBER')
+		// 	.setLabel('Membre')
+		// 	.setStyle(ButtonStyle.Primary)
+		// 	.setEmoji(`✅`);
+
+		// roleChanneltest.send ({
+		// 	embeds : [verify],
+		// 	components : [
+		// 		{
+		// 			type : 1,
+		// 			components : [verifyB[0]],
+		// 		}
+		// 	]
+		// });
+		
 	},
 };

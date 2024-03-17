@@ -100,6 +100,11 @@ module.exports = {
         .setLabel('Shenhe')
         .setEmoji(`🦢`)
         .setStyle(ButtonStyle.Primary);
+        cryoC[4] = new ButtonBuilder()
+        .setCustomId('WRIOTHESLEY')
+        .setLabel('Wriothesley')
+        .setEmoji(`⛓️`)
+        .setStyle(ButtonStyle.Primary);
 
         let anemoC = [];
         anemoC[0] = new ButtonBuilder()
@@ -122,6 +127,11 @@ module.exports = {
         .setLabel('Wanderer')
         .setEmoji(`🍃`)
         .setStyle(ButtonStyle.Primary);
+        anemoC[4] = new ButtonBuilder()
+        .setCustomId('XIANYUN')
+        .setLabel('Xianyun')
+        .setEmoji(`🪭`)
+        .setStyle(ButtonStyle.Primary);
 
         let geoC = [];
         geoC[0] = new ButtonBuilder()
@@ -138,6 +148,11 @@ module.exports = {
         .setCustomId('ITTO')
         .setLabel('Itto')
         .setEmoji(`😈`)
+        .setStyle(ButtonStyle.Primary);
+        geoC[3] = new ButtonBuilder()
+        .setCustomId('NAVIA')
+        .setLabel('Navia')
+        .setEmoji(`☂️`)
         .setStyle(ButtonStyle.Primary);
 
         let hydroC = [];
@@ -170,6 +185,11 @@ module.exports = {
         .setCustomId('NEUVILLETTE')
         .setLabel('Neuvillette')
         .setEmoji(`⚖️`)
+        .setStyle(ButtonStyle.Primary);
+        hydroC[6] = new ButtonBuilder()
+        .setCustomId('FURINA')
+        .setLabel('Furina')
+        .setEmoji(`👑`)
         .setStyle(ButtonStyle.Primary);
 
         let electroC = [];
@@ -242,11 +262,7 @@ module.exports = {
         .setLabel('Dehya')
         .setEmoji(`👊`)
         .setStyle(ButtonStyle.Primary);
-        StandardC[7] = new ButtonBuilder()
-        .setCustomId('WRIOTHESLEY')
-        .setLabel('Wriothesley')
-        .setEmoji(`⛓️`)
-        .setStyle(ButtonStyle.Primary);
+        
 
         // yaetraining.send ({
         //     embeds : [Pyro],
@@ -269,7 +285,7 @@ module.exports = {
         //         },
         //         {
         //             type : 1,
-        //             components : [hydroC[5]],
+        //             components : [hydroC[5], hydroC[6]],
         //         }
         //     ]
         // });
@@ -290,7 +306,7 @@ module.exports = {
         //     components : [
         //         {
         //             type : 1,
-        //             components : [cryoC[0], cryoC[1], cryoC[2], cryoC[3]],
+        //             components : [cryoC[0], cryoC[1], cryoC[2], cryoC[3], cryoC[4]],
         //         }
         //     ]
         // });
@@ -300,7 +316,7 @@ module.exports = {
         //     components : [
         //         {
         //             type : 1,
-        //             components : [anemoC[0], anemoC[1], anemoC[2], anemoC[3]],
+        //             components : [anemoC[0], anemoC[1], anemoC[2], anemoC[3], anemoC[4]],
         //         }
         //     ]
         // });
@@ -310,11 +326,11 @@ module.exports = {
         //     components : [
         //         {
         //             type : 1,
-        //             components : [geoC[0], geoC[1], geoC[2]],
+        //             components : [geoC[0], geoC[1], geoC[2], geoC[3]],
         //         }
         //     ]
         // });
-        // yaetraining.send ({
+        // // yaetraining.send ({
         //     embeds : [Dendro],
         //     files : [elementD],
         //     components : [
@@ -335,7 +351,7 @@ module.exports = {
         //         },
         //         {
         //             type : 1,
-        //             components : [StandardC[5], StandardC[6], StandardC[7]],
+        //             components : [StandardC[5], StandardC[6]],
         //         }
         //     ]
         // });

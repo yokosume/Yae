@@ -34,6 +34,8 @@ const client = new Client({
 });
 client.commands = new Collection();
 
+////////////////////////////////////////// CONNECTION A LA BASE DE DONNEE //////////////////////////////////////////////////////
+
 async function getRoles() {
   try {
     const { data, error } = await supabase.from('idrole').select("*");
@@ -61,6 +63,8 @@ async function connectDB() {
 }
 
 connectDB();
+
+////////////////////////////////////////////////////// LECTURE DES FICHIERS ////////////////////////////////////////////////////////////
 
 const foldersPath = path.join(__dirname, "commands");
 const commandFolders = fs.readdirSync(foldersPath);
@@ -98,6 +102,10 @@ for (const file of eventFiles) {
   }
 }
 
+
+
+//////////////////////////////////////////////// BOUTON ROLE SETUP //////////////////////////////////////////////////
+
 async function parseRoles(ROLE) {
   const roles = await getRoles();
   if (roles.length > 0) {
@@ -107,86 +115,53 @@ async function parseRoles(ROLE) {
   }
 }
 
-// const ROLE = {
-//   FR: "922551993539633193",
-//   EN: "922552055946678332",
-//   HE: "885977420321132575",
-//   SHE: "885977364297834546",
-//   THEY: "885977478651314286",
-//   ANEMO: "857313193738633216",
-//   HYDRO: "857313516645515274",
-//   PYRO: "857313233949294644",
-//   CRYO: "857313326782742528",
-//   GEO: "857313816244125766",
-//   DENDRO: "857313638373130261",
-//   ELECTRO: "857313422923923517",
-//   ANNOUNCEMENT: "827646232905252895",
-//   LEAK: "857332000423804939",
-//   COOPEU: "857310560810565642",
-//   COOPUS: "857310874876248124",
-//   COOPAS: "922547628712030248",
-//   TCG: "1050356624012890153",
-//   TWITCHEVA: "952221458669649940",
-//   XIAO: "814436043653775430",
-//   JEAN: "814435843485466665",
-//   VENTI: "814435987769786388",
-//   KAZUHA: "857311298848686120",
-//   WANDERER: "1037139453057183784",
-//   DILUC: "814435889286479872",
-//   DEHYA: "1088796221235277896",
-//   HUTAO: "816601280574652438",
-//   KLEE: "814435994618036235",
-//   YOIMIYA: "857311501018071080",
-//   KEQING: "814436089921142825",
-//   RAIDEN: "882956440992628736",
-//   YAE: "942499411257331752",
-//   CYNO: "1011646407133896715",
-//   QIQI: "814436224332070924",
-//   GANYU: "814436338656608286",
-//   EULA: "844260280241225729",
-//   AYAKA: "857311414200696842",
-//   SHENHE: "929862007358906389",
-//   ALBEDO: "814436892874899456",
-//   ZHONGLI: "814436469321105488",
-//   ITTO: "919993503507959819",
-//   TARTAGLIA: "814436775488913428",
-//   MONA: "814437335101603882",
-//   KOKOMI: "882956513117876224",
-//   YELAN: "982217355327320135",
-//   AYATO: "942499404856848474",
-//   NILOU: "1011646356852572220",
-//   TIGHNARI: "1011646251353247835",
-//   NAHIDA: "1037139336052871178",
-//   ALHAITHAM: "1067867695992799403",
-//   BAIZHU: "1088796898753785986",
-// };
-
 client.on("interactionCreate", async (interaction) => {
   if (interaction.isButton()) {
     const role = interaction.guild.roles.cache.get(
       ROLE[interaction.customId.toUpperCase()]
     );
+    console.log(role); console.log(ROLE[interaction.customId.toUpperCase()]);
+    
 
     const Nmem = interaction.member;
+    
+    
+
     if (!role)
       return interaction.reply({ content: "Role not found", ephemeral: true });
     if (Nmem.roles.cache.has(role.id)) {
       interaction.member.roles.remove(role).then((member) =>
         interaction.reply({
-          content: `Le ${role} a bien ete remove à ${member}`,
+          content: `Le role ${role} a bien ete remove à ${member}`,
           ephemeral: true,
         })
       );
     } else {
       interaction.member.roles.add(role).then((member) =>
         interaction.reply({
-          content: `Le ${role} a bien ete add à ${member}`,
+          content: `Le role ${role} a bien ete add à ${member}`,
           ephemeral: true,
         })
       );
     }
   }
 });
+
+///////////////////////////////////////////////////// BOUTON INTERACTION GUIDE ///////////////////////////////////////////////////////////// 
+
+
+// client.on('interactionCreate', async interaction => {
+//   if (interaction.isButton()) {
+//       const buttonID = interaction.customId
+//       if (buttonID === 'LYNETTE1') {
+//           interaction.reply({
+//               content: 'Hello'
+//           })
+//       }
+//   }
+// })
+
+////////////////////////////////////////////////////// INTERACTION CREATE //////////////////////////////////////////////////////////////////
 
 client.on(Events.InteractionCreate, async (interaction) => {
   if (!interaction.isChatInputCommand()) return;
@@ -210,5 +185,7 @@ client.on(Events.InteractionCreate, (interaction) => {
   if (!interaction.isButton()) return;
   console.log("Button interaction");
 });
+
+/////////////////////////////////////////////////////////////////// TOKEN ET ALLUMAGE !! //////////////////////////////////////////
 
 client.login(token);
