@@ -201,6 +201,11 @@ module.exports = {
         .setLabel('Furina')
         .setEmoji(`👑`)
         .setStyle(ButtonStyle.Primary);
+        hydroC[7] = new ButtonBuilder()
+        .setCustomId('SIGEWINNE')
+        .setLabel('Sigewinne')
+        .setEmoji(`💉`)
+        .setStyle(ButtonStyle.Primary);
 
         let electroC = [];
         electroC[0] = new ButtonBuilder()
