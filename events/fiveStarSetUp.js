@@ -295,31 +295,32 @@ module.exports = {
         //     ]
         // });
         
-        yaetraining.send ({
-            embeds : [Hydro],
-            files : [elementH],
-            components : [
-                {
-                    type : 1,
-                    components : [hydroC[0], hydroC[1], hydroC[2], hydroC[3], hydroC[4]],
-                },
-                {
-                    type : 1,
-                    components : [hydroC[5], hydroC[6], hydroC[7]],
-                }
-            ]
-        });
+        // yaetraining.send ({
+        //     embeds : [Hydro],
+        //     files : [elementH],
+        //     components : [
+        //         {
+        //             type : 1,
+        //             components : [hydroC[0], hydroC[1], hydroC[2], hydroC[3], hydroC[4]],
+        //         },
+        //         {
+        //             type : 1,
+        //             components : [hydroC[5], hydroC[6], hydroC[7]],
+        //         }
+        //     ]
+        // });
 
-        yaetraining.send ({
-            embeds : [Electro],
-            files : [elementE],
-            components : [
-                {
-                    type : 1,
-                    components : [electroC[0], electroC[1], electroC[2], electroC[3]],
-                }
-            ]
-        });
+        // yaetraining.send ({
+        //     embeds : [Electro],
+        //     files : [elementE],
+        //     components : [
+        //         {
+        //             type : 1,
+        //             components : [electroC[0], electroC[1], electroC[2], electroC[3]],
+        //         }
+        //     ]
+        // });
+
         // yaetraining.send ({
         //     embeds : [Cryo],
         //     files : [elementC],
@@ -361,20 +362,20 @@ module.exports = {
         //     ]
         // });
         
-        // yaetraining.send ({
-        //     embeds : [Standard],
-        //     files : [elementS],
-        //     components : [
-        //         {
-        //             type : 1,
-        //             components : [StandardC[0], StandardC[1], StandardC[2], StandardC[3], StandardC[4]],
-        //         },
-        //         {
-        //             type : 1,
-        //             components : [StandardC[5], StandardC[6]],
-        //         }
-        //     ]
-        // });
+        yaetraining.send ({
+            embeds : [Standard],
+            files : [elementS],
+            components : [
+                {
+                    type : 1,
+                    components : [StandardC[0], StandardC[1], StandardC[2], StandardC[3], StandardC[4]],
+                },
+                {
+                    type : 1,
+                    components : [StandardC[5], StandardC[6]],
+                }
+            ]
+        });
 
     },
 };    
