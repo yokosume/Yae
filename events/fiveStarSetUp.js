@@ -232,7 +232,7 @@ module.exports = {
         let dendroC = [];
         dendroC[0] = new ButtonBuilder()
         .setCustomId('NAHIDA')
-        .setLabel('Nadiha')
+        .setLabel('Nahida')
         .setEmoji(`🪴`)
         .setStyle(ButtonStyle.Primary);
         dendroC[1] = new ButtonBuilder()
@@ -244,6 +244,11 @@ module.exports = {
         .setCustomId('BAIZHU')
         .setLabel('Baizhu')
         .setEmoji(`🐍`)
+        .setStyle(ButtonStyle.Primary);
+        dendroC[3] = new ButtonBuilder()
+        .setCustomId('EMILIE')
+        .setLabel('Emilie')
+        .setEmoji(`🧪`)
         .setStyle(ButtonStyle.Primary);
 
         let StandardC = [];
@@ -331,6 +336,7 @@ module.exports = {
         //         }
         //     ]
         // });
+
         // yaetraining.send ({
         //     embeds : [Anemo],
         //     files : [elementA],
@@ -341,6 +347,7 @@ module.exports = {
         //         }
         //     ]
         // });
+
         // yaetraining.send ({
         //     embeds : [Geo],
         //     files : [elementG],
@@ -351,16 +358,17 @@ module.exports = {
         //         }
         //     ]
         // });
-        // // yaetraining.send ({
-        //     embeds : [Dendro],
-        //     files : [elementD],
-        //     components : [
-        //         {
-        //             type : 1,
-        //             components : [dendroC[0], dendroC[1], dendroC[2]],
-        //         }
-        //     ]
-        // });
+
+        yaetraining.send ({
+            embeds : [Dendro],
+            files : [elementD],
+            components : [
+                {
+                    type : 1,
+                    components : [dendroC[0], dendroC[1], dendroC[2], dendroC[3]],
+                }
+            ]
+        });
         
         // yaetraining.send ({
         //     embeds : [Standard],
