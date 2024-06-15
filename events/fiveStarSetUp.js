@@ -370,20 +370,20 @@ module.exports = {
         //     ]
         // });
         
-        yaetraining.send ({
-            embeds : [Standard],
-            files : [elementS],
-            components : [
-                {
-                    type : 1,
-                    components : [StandardC[0], StandardC[1], StandardC[2], StandardC[3], StandardC[4]],
-                },
-                {
-                    type : 1,
-                    components : [StandardC[5], StandardC[6]],
-                }
-            ]
-        });
+        // yaetraining.send ({
+        //     embeds : [Standard],
+        //     files : [elementS],
+        //     components : [
+        //         {
+        //             type : 1,
+        //             components : [StandardC[0], StandardC[1], StandardC[2], StandardC[3], StandardC[4]],
+        //         },
+        //         {
+        //             type : 1,
+        //             components : [StandardC[5], StandardC[6]],
+        //         }
+        //     ]
+        // });
 
     },
 };    
