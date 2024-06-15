@@ -359,31 +359,31 @@ module.exports = {
         //     ]
         // });
 
-        yaetraining.send ({
-            embeds : [Dendro],
-            files : [elementD],
-            components : [
-                {
-                    type : 1,
-                    components : [dendroC[0], dendroC[1], dendroC[2], dendroC[3]],
-                }
-            ]
-        });
-        
         // yaetraining.send ({
-        //     embeds : [Standard],
-        //     files : [elementS],
+        //     embeds : [Dendro],
+        //     files : [elementD],
         //     components : [
         //         {
         //             type : 1,
-        //             components : [StandardC[0], StandardC[1], StandardC[2], StandardC[3], StandardC[4]],
-        //         },
-        //         {
-        //             type : 1,
-        //             components : [StandardC[5], StandardC[6]],
+        //             components : [dendroC[0], dendroC[1], dendroC[2], dendroC[3]],
         //         }
         //     ]
         // });
+        
+        yaetraining.send ({
+            embeds : [Standard],
+            files : [elementS],
+            components : [
+                {
+                    type : 1,
+                    components : [StandardC[0], StandardC[1], StandardC[2], StandardC[3], StandardC[4]],
+                },
+                {
+                    type : 1,
+                    components : [StandardC[5], StandardC[6]],
+                }
+            ]
+        });
 
     },
 };    
